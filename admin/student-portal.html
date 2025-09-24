@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="MarSU Student Portal" />
+    <meta name="author" content="Marinduque State University" />
+    <title>Student Portal - MarSu Admin</title>
+    <link href="../css/style.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <script src="../js/all.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --apple-green: #4CAF50;
+            --apple-green-dark: #388E3C;
+        }
+
+        .sb-topnav {
+            background-color: var(--apple-green) !important;
+        }
+        .btn-primary {
+            background-color: var(--apple-green);
+            border-color: var(--apple-green);
+        }
+        .btn-primary:hover {
+            background-color: var(--apple-green-dark);
+            border-color: var(--apple-green-dark);
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+        .student-img {
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+        .accordion-button {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body class="sb-nav-fixed">
+    <!-- Navbar -->
+    <nav class="sb-topnav navbar navbar-expand navbar-dark">
+        <a class="navbar-brand ps-3" href="../index.html">
+            <img src="../assets/img/MARSU LOGO.png" alt="MSU Logo" height="40" class="me-2">
+            MarSu Admin
+        </a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#!">Profile Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Layout -->
+    <div id="layoutSidenav">
+        <!-- Sidebar -->
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Main</div>
+                        <a class="nav-link" href="dashboard.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Academic</div>
+                        <a class="nav-link" href="students.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-graduation-cap"></i></div>
+                            Students
+                        </a>
+                        <a class="nav-link" href="faculty.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            Faculty
+                        </a>
+                        <a class="nav-link" href="courses.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                            Courses
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Learning</div>
+                        <a class="nav-link" href="javascript-guide.html">
+                            <div class="sb-nav-link-icon"><i class="fab fa-js"></i></div>
+                            JavaScript Guide
+                        </a>
+                        <a class="nav-link" href="javascript-playground.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-code"></i></div>
+                            JavaScript Playground
+                        </a>
+                        <a class="nav-link active" href="student-portal.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+                            Student Portal
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Student
+                </div>
+            </nav>
+        </div>
+
+        <!-- Content -->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4"> Student Portal</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Student Portal</li>
+                    </ol>
+
+                    <!-- Profile Summary -->
+                    <div class="card mb-4">
+                        <div class="card-body d-flex align-items-center">
+                            <img src="/image/cass.jpg" class="student-img me-3" style="width:60px; height:60px;">
+                            <div>
+                                <h5 class="mb-1">Cassandra Marie Conde</h5>
+                                <p class="mb-0 text-muted">BS Computer Science - 3rd Year</p>
+                                <span class="badge bg-success">Enrolled</span>
+                            </div>
+                            <div class="ms-auto">
+                                <button class="btn btn-outline-primary btn-sm"><i class="fas fa-user-edit"></i> Update Profile</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Sections -->
+                    <div class="accordion" id="studentPortalAccordion">
+                        <!-- Grades -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingGrades">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGrades">
+                                    My Grades
+                                </button>
+                            </h2>
+                            <div id="collapseGrades" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr><th>Subject</th><th>Grade</th><th>Remarks</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Programming 1</td><td>1.25</td><td>Passed</td></tr>
+                                            <tr><td>Database Systems</td><td>1.50</td><td>Passed</td></tr>
+                                            <tr><td>Networks</td><td>2.00</td><td>Passed</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Courses -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingCourses">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCourses">
+                                    My Courses
+                                </button>
+                            </h2>
+                            <div id="collapseCourses" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Web Development</li>
+                                        <li class="list-group-item">Operating Systems</li>
+                                        <li class="list-group-item">Software Engineering</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Announcements -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingAnnouncements">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnnouncements">
+                                     Announcements
+                                </button>
+                            </h2>
+                            <div id="collapseAnnouncements" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>📌 Enrollment ends September 30</li>
+                                        <li>📌 Midterm exams start October 15</li>
+                                        <li>📌 Sportsfest: November 5</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payments -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingPayments">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePayments">
+                                    Payments & Balance
+                                </button>
+                            </h2>
+                            <div id="collapsePayments" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr><th>Transaction</th><th>Amount</th><th>Status</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Tuition Fee</td><td>₱15,000</td><td><span class="badge bg-success">Paid</span></td></tr>
+                                            <tr><td>Library Fee</td><td>₱500</td><td><span class="badge bg-warning text-dark">Pending</span></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Marinduque State University 2025</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
